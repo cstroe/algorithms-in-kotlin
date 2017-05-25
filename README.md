@@ -20,3 +20,4 @@ You can run all the units tests for the project, you can use the Maven command:
 
 ## Links
 * [Kotlin Reference](https://kotlinlang.org/docs/reference/basic-syntax.html)
+* [IntelliJ IDEA download page](https://www.jetbrains.com/idea/specials/idea/idea.html#chooseYourEdition)
