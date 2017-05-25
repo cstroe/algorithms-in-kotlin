@@ -4,5 +4,19 @@ This repository contains several algorithms that were implemented as part of rea
 
 The choice of using [Kotlin](https://kotlinlang.org/) as the implementation language was based on personal curiosity and background with [Scala](https://www.scala-lang.org/) and [Java](https://go.java).
 
+## Developing with IntelliJ IDEA
+
+We recommend using [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/specials/idea/idea.html#chooseYourEdition) for your coding.  Simply open the `pom.xml` file at the root of the directory and click `Import as Project`.
+
+You can then browse the code, and run invidual tests by right clicking on the test class or method and selecting Run.
+
+## Running from the command line
+
+You can run all the units tests for the project, you can use the Maven command:
+
+```
+./mvnw test
+```
+
 ## Links
 * [Kotlin Reference](https://kotlinlang.org/docs/reference/basic-syntax.html)
