@@ -12,7 +12,7 @@ You can then browse the code, and run invidual tests by right clicking on the te
 
 ## Running from the command line
 
-You can run all the units tests for the project, you can use the Maven command:
+You can run all the units tests for the project, you can use the [Maven](https://maven.apache.org) command:
 
 ```
 ./mvnw test
