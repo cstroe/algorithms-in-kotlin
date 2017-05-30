@@ -29,4 +29,14 @@ class InsertionSortTest {
         }
     }
 
+    @Test fun singleElement() {
+        val array = insertionSort(arrayOf(10))
+        assert(isSorted(array))
+        assert(array[0] == 10)
+    }
+
+    @Test fun emptyArray() {
+        val array = insertionSort(arrayOf())
+        assert(isSorted(array))
+    }
 }
