@@ -22,4 +22,8 @@ class SortUtilsTest {
     @Test fun arrayWithDuplicateElementsIsSorted() {
         assert(isSorted(arrayOf(2, 2, 3, 4, 5)))
     }
+
+    @Test fun negativeNumbersShouldBeSorted() {
+        assert(isSorted(arrayOf(-9, -8, -6, -5, 5, 6, 7, 8)))
+    }
 }
