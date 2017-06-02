@@ -1,42 +1,16 @@
 package com.github.cstroe.aik.sort
 
-import org.junit.Test
-import java.util.*
+import org.jetbrains.spek.api.dsl.describe
+import org.jetbrains.spek.subject.SubjectSpek
+import org.jetbrains.spek.subject.itBehavesLike
+import org.junit.platform.runner.JUnitPlatform
+import org.junit.runner.RunWith
 
-class InsertionSortTest {
-    val random = Random()
+@RunWith(JUnitPlatform::class)
+object InsertionSortSpec: SubjectSpek<InsertionSort> ({
+    subject { InsertionSort() }
 
-    @Test fun simpleSort() {
-        val expected = arrayOf(1, 2, 4, 5, 7, 9)
-        val output = insertionSort(arrayOf(1, 7, 5, 4, 9, 2))
-        assert(expected contentEquals output, { -> "Output array ${output.contentDeepToString()} is not equal to ${expected.contentDeepToString()}" })
+    describe("the insertion sort algorithm") {
+        itBehavesLike(SortingAlgorithmSpec)
     }
-
-    @Test fun randomlySorted() {
-        val randomNumbers = (1 .. 10).map { random.nextInt() }.toTypedArray()
-        if(isSorted(randomNumbers)) {
-            val temp = randomNumbers[0]
-            randomNumbers[0] = randomNumbers[9]
-            randomNumbers[9] = temp
-        }
-
-        assert(!isSorted(randomNumbers))
-        val sortedArray = insertionSort(randomNumbers)
-        assert(isSorted(sortedArray), { -> "Array ${sortedArray.contentDeepToString()} is not sorted."})
-        assert(sortedArray.size == randomNumbers.size)
-        for(i in randomNumbers) {
-            assert(sortedArray.contains(i))
-        }
-    }
-
-    @Test fun singleElement() {
-        val array = insertionSort(arrayOf(10))
-        assert(isSorted(array))
-        assert(array[0] == 10)
-    }
-
-    @Test fun emptyArray() {
-        val array = insertionSort(arrayOf())
-        assert(isSorted(array))
-    }
-}
+})
